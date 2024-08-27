@@ -4,7 +4,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    background: linear-gradient(90deg, #523705, maroon, #e029d1);
     overflow: hidden;
     font-family: Arial, sans-serif;
     perspective: 1000px;
@@ -23,8 +23,9 @@ body {
 }
 
 .text {
+    text-align: center;
     font-size: 5em;
-    color: #ffffff;
+    color: whitesmoke;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     font-weight: bold;
