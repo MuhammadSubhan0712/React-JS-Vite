@@ -10,12 +10,12 @@
   max-width: 600px;
   margin: 40px auto;
   padding: 20px;
-  background-color: #f7f9fc;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  border: 3px groove #adacac;
+ background-color: transparent;
+  /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
+  border: 4px groove #adacac;
   border-radius: 6px;
   font-family: 'Segoe UI';
-  color: #333;
+  color: #313131;
 }
 
 /* Form Styling */
@@ -124,4 +124,12 @@
 .styled-list li:hover {
   transform: translateY(-3px);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.para{
+  text-align: center;
+  font-size: 18px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: bold;
+  color: white;
 }

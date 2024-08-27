@@ -80,7 +80,7 @@ function App() {
                   Delete
                 </button>
               </div>
-            )}): <p>!No todo entered yet!</p>}
+            )}): <p className="para">!No todo entered yet!</p>}
         </ul>
       </div>
      
