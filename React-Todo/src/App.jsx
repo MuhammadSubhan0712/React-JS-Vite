@@ -56,12 +56,16 @@ function App() {
           </button>
         </form>
 
-        {/* Todo List  */}
+
+        {/* Todo List  */ }
 
         <ul className="styled-list">
-          {todo.map((item, index) => {
+          { todo.length > 0 ? todo.map((item, index) => {
+
             return (
               <div key={index}>
+                <br />
+
                 <li>{item}</li>
                 <button
                   onClick={() => EditTodo(index)}
@@ -76,12 +80,12 @@ function App() {
                   Delete
                 </button>
               </div>
-            );
-          })}
+            )}): <p>!No todo entered yet!</p>}
         </ul>
       </div>
+     
     </>
-  );
+  )
 }
 
 export default App;
