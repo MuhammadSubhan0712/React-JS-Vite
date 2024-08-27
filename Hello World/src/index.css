@@ -10,6 +10,7 @@ body {
     perspective: 1000px;
 }
 
+/* Background positions and other styles */
 .background {
     position: absolute;
     top: 0;
@@ -22,6 +23,7 @@ body {
     z-index: -1;
 }
 
+/* Text rotation and styling */
 .text {
     text-align: center;
     font-size: 5em;
@@ -39,6 +41,7 @@ body {
     animation: rotate 10s infinite linear;
 }
 
+/* For Animation */
 @keyframes glow {
     0% {
         background-position: 0% 0%;
