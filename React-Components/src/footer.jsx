@@ -6,12 +6,13 @@ function Footer() {
     <>
       <footer className="footer">
         <p>© 2024 Nike. All rights reserved.</p>
+
         <ul className="footer-menu">
           <li>
-            <a href="#">Privacy</a>
+            <a href="#">About us</a>
           </li>
           <li>
-            <a href="#">Terms</a>
+            <a href="#">Terms & Conditions</a>
           </li>
           <li>
             <a href="#">Contact</a>
