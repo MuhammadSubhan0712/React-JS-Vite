@@ -1,25 +1,30 @@
-import { useState } from 'react'
-import Button from './components/button'
-import Navbar from './components/navbar'
-import Cards from './components/cards'
+// import { useState } from 'react'
+import React from 'react'
+import Navbar from './navbar'
+import Cards from './cards'
+import Footer from './footer'
 
 function App() {
-  const [count, setCount] = useState(0)
+  // const [count, setCount] = useState(0)
 
   return (
     <>
-     <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+    <nav>
+    <Navbar/>
+    </nav>
+<br /><br />
+    <div>
+     <Cards/>
+    </div>
 
-    
-<h1>Components</h1>
-<Button/>
-<Navbar/>
-<Cards/>
+
+<footer>
+<Footer/>
+</footer>
 </>
   )
 }
+
 
 
 export default App
