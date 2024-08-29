@@ -3,7 +3,6 @@ import "./index.css"
 
 function Navbar() {
     
-
     return(
         // <  <!-- Navbar -->
 <>        <nav className="navbar">
