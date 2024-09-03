@@ -1,4 +1,4 @@
-<h4> By click  check on the browser for better experience </h4>
+<h4> Check on the browser for better experience </h4>
 
 <p><a href= "https://hello-react-world-subhan.netlify.app/" />Click Hello World</p>
   
@@ -8,3 +8,4 @@
  
 <p><a href="https://react-comp-subhan.netlify.app/"/>Click React Components</p>
 
+<p><a href="https://react-cards-subhan.netlify.app/"/>Click React Cards</p>
