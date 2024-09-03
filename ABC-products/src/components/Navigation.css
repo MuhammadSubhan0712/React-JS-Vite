@@ -9,7 +9,7 @@ body {
   /* Navbar Styles */
   .navbar {
     width: 100%;
-    background-color: #002f34; /* OLX-like dark color */
+    background-color: #002f34; 
     padding: 0.5rem 1rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     position: fixed;
@@ -31,9 +31,11 @@ body {
   }
   
   .navbar-logo {
-    width: 50px;
+    width: 60px;
     height: auto;
     margin-right: 10px;
+    border: 3px groove lightcyan;
+    border-radius: 40px;
   }
   
   /* Search Bar Styles */
