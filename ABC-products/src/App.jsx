@@ -14,18 +14,18 @@ function App() {
     </div>
   
   <div className='card-container'>
-    <div >
-    <Cards image="https://mobiletrade.pk/wp-content/uploads/2024/05/3-10.png.webp" title="Vivo Y93" price="30000" location="Karachi" contact="012313144151"/>
-    <Cards image="https://mobiletrade.pk/wp-content/uploads/2024/05/3-10.png.webp" title="Vivo Y93" price="30000" location="Karachi" contact="012313144151"/>
-    <Cards image="https://mobiletrade.pk/wp-content/uploads/2024/05/3-10.png.webp" title="Vivo Y93" price="30000" location="Lahore" contact="012313144151"/>
-    <Cards image="https://mobiletrade.pk/wp-content/uploads/2024/05/3-10.png.webp" title="Vivo Y93" price="30000" location="Islamabad" contact="012313144151"/>
-    <Cards image="https://mobiletrade.pk/wp-content/uploads/2024/05/3-10.png.webp" title="Vivo Y93" price="30000" location="Quetta" contact="012313144151"/>
-    <Cards image="https://mobiletrade.pk/wp-content/uploads/2024/05/3-10.png.webp" title="Vivo Y93" price="30000" location="Karachi" contact="012313144151"/>
-    <Cards image="https://mobiletrade.pk/wp-content/uploads/2024/05/3-10.png.webp" title="Vivo Y93" price="30000" location="Lahore" contact="012313144151"/>
-    <Cards image="https://mobiletrade.pk/wp-content/uploads/2024/05/3-10.png.webp" title="Vivo Y93" price="30000" location="Sukkur" contact="012313144151"/>
-    <Cards image="https://mobiletrade.pk/wp-content/uploads/2024/05/3-10.png.webp" title="Vivo Y93" price="30000" location="Islamabad" contact="012313144151"/>
+    <Cards image="https://images.olx.com.pk/thumbnails/466774088-240x180.jpeg" title="Realme Note-50" price="35000" location="Karachi" contact="012313144151"/>
+    <Cards image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ08nMkQVS3uoqukvYh14m4gjoVqmn6RricAQ&s" title="Civic 2022" price="4500000" location="Karachi" contact="012313144151"/>
+    <Cards image="https://cache2.pakwheels.com/ad_pictures/8028/honda-cd-70-3-2022-80288052.webp" title="Honda CD-70 2022" price="90000" location="Lahore" contact="012313144151"/>
+    <Cards image="https://cache3.pakwheels.com/ad_pictures/1042/suzuki-mehran-1993-104283912.webp" title="Suzuki Mehran 1993" price="400000" location="Islamabad" contact="012313144151"/>
+    <Cards image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRp9usGN54xbvsszfcuizDEmpS6_VRtO9hNmw&s" title="All Brands" price="20000 - 50000" location="Quetta" contact="012313144151"/>
+    <Cards image="https://orient.com.pk/cdn/shop/articles/season_end_sale.jpg?v=1597754442" title="Orient Full Package" price="250000" location="Karachi" contact="012313144151"/>
+    <Cards image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRe21GumL9nwjZ8Ct_Uj1B5IMqA_czoKWFxIQ&s" title="Asia Washing Machine" price="150000" location="Lahore" contact="012313144151"/>
+    <Cards image="https://images.olx.com.pk/thumbnails/459246106-240x180.jpeg" title="inverex Solar Inverter " price="60000" location="Sargodha" contact="012313144151"/>
+    <Cards image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSEzsYx4kbf259hLe-MivaPIyFBjysF0yasg&s" title="Haier DC Inverter" price="160000" location="Islamabad" contact="012313144151"/>
   </div>
-  </div>
+
+  
 
     </>
   )

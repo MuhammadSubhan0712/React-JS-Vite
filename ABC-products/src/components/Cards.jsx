@@ -1,7 +1,6 @@
 import "./Cards.css"
-// import React from 'react'
 
-const Cards = ({image , title , price , location , contact})=>{
+const Cards = ({image , title , price , location , contact}) => {
 return(
     <>
     <div className="card-container">
@@ -9,7 +8,7 @@ return(
       <img src={image} alt={title} className="card-image" />
       <div className="card-content">
         <h3 className="card-title">{title}</h3>
-        <p className="card-price">{price}</p>
+        <p className="card-price">{price} Rs.</p>
         <p className="card-location">{location}</p>
         <p className="card-date">{contact}</p>
       </div>
