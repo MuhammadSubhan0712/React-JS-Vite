@@ -75,5 +75,9 @@
     .card {
       max-width: 90%; /* Adjust max-width for smaller screens */
     }
+    .card-image {
+        height: 240px; /* Adjust height for screens up to 1200px wide */
+      }
   }
+
   

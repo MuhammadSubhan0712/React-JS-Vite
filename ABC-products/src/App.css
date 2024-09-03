@@ -10,7 +10,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background: linear-gradient(to bottom  ,  rgb(0, 0, 109) , black);
+  background: linear-gradient(to bottom  ,  rgb(0, 0, 109) , rgb(78, 78, 78));
 }
 
 /* Card Container */
@@ -19,5 +19,4 @@ body {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  
 }
