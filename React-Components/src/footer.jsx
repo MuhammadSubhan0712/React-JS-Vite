@@ -15,7 +15,7 @@ function Footer() {
             <a href="#">Terms & Conditions</a>
           </li>
           <li>
-            <a href="#">Contact</a>
+            <a href="#">Contact us</a>
           </li>
         </ul>
       </footer>
