@@ -1,9 +1,10 @@
-// import "./Cards.css"
+import "./Cards.css"
+// import React from 'react'
 
 const Cards = ({image , title , price , location , contact})=>{
 return(
     <>
-    <div className='card-container'>
+    <div className="card-container">
    <div className="card">
       <img src={image} alt={title} className="card-image" />
       <div className="card-content">
@@ -12,6 +13,7 @@ return(
         <p className="card-location">{location}</p>
         <p className="card-date">{contact}</p>
       </div>
+      <button>More Info</button>
     </div>
     </div>
     </>
