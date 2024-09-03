@@ -23,7 +23,9 @@ function App() {
     <Cards image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRe21GumL9nwjZ8Ct_Uj1B5IMqA_czoKWFxIQ&s" title="Asia Washing Machine" price="150000" location="Lahore" contact="012313144151"/>
     <Cards image="https://images.olx.com.pk/thumbnails/459246106-240x180.jpeg" title="inverex Solar Inverter " price="60000" location="Sargodha" contact="012313144151"/>
     <Cards image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSEzsYx4kbf259hLe-MivaPIyFBjysF0yasg&s" title="Haier DC Inverter" price="160000" location="Islamabad" contact="012313144151"/>
-    
+    <Cards image="https://images.olx.com.pk/thumbnails/204336742-240x180.jpeg" title="Samson Digital Stablizer" price="20000" location="Sukkur" contact="06423144151"/>
+    <Cards image="https://images.olx.com.pk/thumbnails/480794840-240x180.jpeg" title="Ceiling Fan " price="15000" location="Karachi" contact="012314151"/>
+    <Cards image="https://images.olx.com.pk/thumbnails/381547091-240x180.jpeg" title="Outdoor Lights" price="50000" location="Islamabad" contact="01234151"/>
   </div>
 
 
