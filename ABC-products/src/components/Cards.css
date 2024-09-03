@@ -1,7 +1,7 @@
 
   /* Card Styles */
   .card {
-    background-color: #ffffff;
+    background-color: lightyellow;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     overflow: hidden;
@@ -57,7 +57,6 @@
     color: aliceblue;
     background: linear-gradient(to top , rgb(0, 71, 0) , rgb(41, 211, 41));
     border: 1px solid darkgreen;
-    border-radius: 4px;
     transition: 0.2s ease-in-out;
     cursor: pointer;
   }

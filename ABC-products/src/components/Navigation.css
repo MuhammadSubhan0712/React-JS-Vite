@@ -87,6 +87,7 @@
   .sell-btn {
     padding: 0.5rem 1rem;
     background: linear-gradient(to right , rgb(98, 243, 98) , rgb(226, 226, 21)) ;
+    border: 2px groove goldenrod;
     border-radius: 4px;
     color: #002f34;
     font-weight: bold;
