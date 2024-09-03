@@ -7,7 +7,7 @@ return(
     <nav className="navbar">
       <div className="navbar-content">
         <a href="/" className="navbar-brand">
-          <img src="https://seeklogo.com/images/O/olx-logo-20F1656D13-seeklogo.com.png" alt="OLX Logo" className="navbar-logo" />
+          <img src="https://img.pikbest.com/png-images/20240729/abstract-real-estate-agent-logo-icon-vector-design-rent-sale-of_10687917.png!f305cw" alt="Logo" className="navbar-logo" />
         </a>
 
         <div className="navbar-search">
