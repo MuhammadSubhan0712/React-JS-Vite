@@ -1,7 +1,13 @@
+import "./Cards.css"
 
-
-const Cards = ()=>{
-
+const Cards = (title , desc , price , contact)=>{
+return(
+    <>
+    <div>
+        
+    </div>
+    </>
+)
 }
 
 export default Cards
