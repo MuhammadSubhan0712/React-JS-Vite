@@ -1,6 +1,6 @@
 import "./Cards.css"
 
-const Cards = (title , desc , price , contact)=>{
+const Cards = ({image , title , price , location , date})=>{
 return(
     <>
    <div className="card">
