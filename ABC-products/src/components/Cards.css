@@ -54,10 +54,17 @@
     font-size: 15px;
     font-weight: 600;
     width: 100%;
-    background-color: #ffcc00;
-    border: none;
+    color: aliceblue;
+    background: linear-gradient(to top , rgb(0, 71, 0) , rgb(41, 211, 41));
+    border: 1px solid darkgreen;
     border-radius: 4px;
+    transition: 0.2s ease-in-out;
     cursor: pointer;
+  }
+
+  .card button:hover{
+    transition: 0.2s ease-in-out;
+    color: rgb(95, 196, 255);
   }
   
   /* Responsive Design */
