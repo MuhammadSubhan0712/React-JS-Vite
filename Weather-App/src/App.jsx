@@ -3,7 +3,7 @@ import axios from 'axios'
 import './App.css'
 
 function App() {
-  const [Weatherdata, setWeatherdata] = useState([])
+  const [Weatherdata, setWeatherdata] = useState(null)
   const Uinput = useRef()
 
   useEffect(()=>{
@@ -49,8 +49,8 @@ Uinput = ""
 
     <div className='Card-container'>
     {(
-    Weatherdata.map((item , id)=>
-    (<div key={id}>
+    Weatherdata.map((item , index)=>
+  {<div key={index}>
    <h2>{item.location.name}</h2>
    <h3>{item.location.country}</h3>
    <h3>{item.current.temp_c}°C</h3>
@@ -58,7 +58,7 @@ Uinput = ""
    <p>{item.current.humidity}%</p>
    <p>{item.current.wind_kph}kph</p>
     </div>
-    ))
+})
   )}
     </div>
     </>
