@@ -20,7 +20,7 @@ function status(event) {
   axios(`https://api.weatherapi.com/v1/current.json?key=569c0fa5727f4e9387350542241406 &q=${Uinput.current.value}&aqi=no`)
 .then(res =>{
   console.log(res.data);
-  Weatherdata.push(res.data)
+  Weatherdata.unshift(res.data)
   setWeatherdata([...Weatherdata]) 
   console.log(Weatherdata);
   }
