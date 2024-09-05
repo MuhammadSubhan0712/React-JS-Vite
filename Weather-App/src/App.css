@@ -10,7 +10,7 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-}
+} 
 
 /* Title */
 .h1 {
@@ -91,8 +91,10 @@ button:hover {
 }
 
 .Card-container span {
+  font-family: 'Georgia', 'Times New Roman';
   font-weight: bold;
 }
+
 
 /* Responsive Design */
 @media (max-width: 768px) {

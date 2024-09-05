@@ -39,7 +39,7 @@ Uinput.current.value = ""
     <h1 className='h1'>Weather App <i className="fas fa-cloud-sun"></i></h1>
 
 
-    <form onSubmit={status}>
+    <form className='form' onSubmit={status}>
      
      <input type="text" placeholder='Enter City to check Weather' ref={Uinput} />
      <button><i className="fas fa-search"></i></button>
@@ -56,7 +56,8 @@ Uinput.current.value = ""
    <h4>Temp: <span>{item.current.temp_c}°C</span></h4>
    <h4>LocalTime: <span>{item.location.localtime}</span></h4>
    <h4>Humidity: <span>{item.current.humidity}%</span></h4>
-   <h4>Wind: <span>{item.current.wind_kph}kph</span></h4>
+   <h4>Wind: <span>{item.current.wind_kph} kph</span></h4>
+   <img src={item.current.condition.icon} alt="Icon" />
 
   </div>
   ))
