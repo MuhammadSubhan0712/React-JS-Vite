@@ -18,20 +18,22 @@ function status(event) {
   alert("Let's have something Please Enter City") :
   
   axios(`https://api.weatherapi.com/v1/current.json?key=569c0fa5727f4e9387350542241406 &q=${Uinput.current.value}&aqi=no`)
-.then((res) =>{
-  console.log(res.data)
+.then(res =>{
+  console.log(res.data);
   Weatherdata.push(res.data)
-  setWeatherdata(...Weatherdata) 
+  setWeatherdata([...Weatherdata]) 
   console.log(Weatherdata);
   }
   )
-.catch((err) =>{
-  console.log("Error==>", err)
+.catch(err =>{
+  console.log("Error==>", err);
   alert("!There is an Error Please try Again!")
 })
 
-Uinput = ""
+Uinput.current.value = ""
 }
+
+
   return (
     <>
     <h1 className='h1'>Weather App</h1>
