@@ -36,14 +36,13 @@ Uinput.current.value = ""
 
   return (
     <>
-    <h1 className='h1'>Weather App</h1>
+    <h1 className='h1'>Weather App <i className="fas fa-cloud-sun"></i></h1>
 
 
     <form onSubmit={status}>
      
      <input type="text" placeholder='Enter City to check Weather' ref={Uinput} />
-
-     <button>Search</button>
+     <button><i className="fas fa-search"></i></button>
 
     </form>
 
@@ -52,13 +51,14 @@ Uinput.current.value = ""
   {(
     Weatherdata.map((item , index)=>
   (<div key={index}>
-   <h2>{item.location.name}</h2>
-   <h3>{item.location.country}</h3>
-   <h3>{item.current.temp_c}°C</h3>
-   <h3>{item.current.condition.text}</h3>
-   <p>{item.current.humidity}%</p>
-   <p>{item.current.wind_kph}kph</p>
-    </div>
+   <h3><span>{item.location.name} , "{item.location.country}"</span></h3>
+   <h4>Region: <span>{item.location.region}</span></h4>
+   <h4>Temp: <span>{item.current.temp_c}°C</span></h4>
+   <h4>LocalTime: <span>{item.location.localtime}</span></h4>
+   <h4>Humidity: <span>{item.current.humidity}%</span></h4>
+   <h4>Wind: <span>{item.current.wind_kph}kph</span></h4>
+
+  </div>
   ))
   )}
     </div>
