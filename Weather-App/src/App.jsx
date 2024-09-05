@@ -10,11 +10,11 @@ function App() {
   
 } , [status])
 
-
+// Function status 
 function status(event) {
   event.preventDefault();
   
-  (Uinput.current.value === " ") ? 
+  (Uinput.current.value === "") ? 
   alert("Let's have something Please Enter City") :
   
   axios(`https://api.weatherapi.com/v1/current.json?key=569c0fa5727f4e9387350542241406 &q=${Uinput.current.value}&aqi=no`)
@@ -27,7 +27,7 @@ function status(event) {
   )
 .catch(err =>{
   console.log("Error==>", err);
-  alert("!There is an Error Please try Again!")
+  alert("!You Must Enter the City name")
 })
 
 Uinput.current.value = ""
@@ -36,7 +36,7 @@ Uinput.current.value = ""
 
   return (
     <>
-    <h1 className='h1'>Weather App <i className="fas fa-cloud-sun"></i></h1>
+    <h1 className='h1'>Weather App<i className="fas fa-cloud-sun"></i></h1>
 
 
     <form className='form' onSubmit={status}>

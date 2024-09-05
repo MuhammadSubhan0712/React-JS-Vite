@@ -3,21 +3,27 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  background:linear-gradient(90deg , lightcyan , rgb(88, 88, 253) , rgb(145, 179, 190) );
   color: #ffffff;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-} 
+}
 
 /* Title */
 .h1 {
+  background: linear-gradient(135deg, #8B4513, #FF7F50, #FFD700);
+  color: transparent;
+  background-clip: text;
   font-size: 2.5rem;
   margin-bottom: 20px;
   text-align: center;
   color: #ffffff;
+  border: 4px groove;
+  border-image: linear-gradient(135deg, #8B4513, #FFD700) ;
+  display: inline-block;
 }
 
 /* Form Styles */
@@ -42,13 +48,13 @@ button {
   font-size: 1rem;
   border: none;
   border-radius: 5px;
-  background-color: #007bff;
+  background-color: #5a005a;
   color: white;
   cursor: pointer;
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #d448ff;
 }
 
 /* Card Container */
@@ -63,8 +69,7 @@ button:hover {
 
 /* Weather Card Styles */
 .Card-container > div {
-  background-color: #ffffff;
-  color: #333;
+  background: linear-gradient(135deg, #8B4513, #FF7F50 ,maroon);
   border-radius: 8px;
   padding: 20px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -76,13 +81,13 @@ button:hover {
 
 .Card-container > div:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 16px rgb(255, 255, 255);
 }
 
 .Card-container h3 {
   font-size: 1.5rem;
   margin-bottom: 10px;
-  color: #002f34;
+  color: #ffffff;
 }
 
 .Card-container h4 {
@@ -91,10 +96,11 @@ button:hover {
 }
 
 .Card-container span {
-  font-family: 'Georgia', 'Times New Roman';
-  font-weight: bold;
+  font-weight: 500;
 }
-
+.Card-container img{
+  font-size: larger;
+}
 
 /* Responsive Design */
 @media (max-width: 768px) {
