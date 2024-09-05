@@ -27,7 +27,7 @@ function status(event) {
   )
 .catch(err =>{
   console.log("Error==>", err);
-  alert("!You Must Enter the City name")
+  alert("!Please Enter correct City Name")
 })
 
 Uinput.current.value = ""
@@ -36,7 +36,7 @@ Uinput.current.value = ""
 
   return (
     <>
-    <h1 className='h1'>Weather App<i className="fas fa-cloud-sun"></i></h1>
+    <h1 className='h1'>Weather App <i className="fas fa-cloud-sun"></i></h1>
 
 
     <form className='form' onSubmit={status}>
