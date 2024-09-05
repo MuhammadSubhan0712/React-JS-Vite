@@ -1,49 +1,88 @@
 import { useEffect, useRef, useState } from 'react'
 import axios from 'axios'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
   const [Weatherdata, setWeatherdata] = useState([])
-  const card = useRef()
+  const Uinput = useRef()
 
   useEffect(()=>{
-    
-  // axios(
-  //   `https://api.weatherapi.com/v1/current.json?key=569c0fa5727f4e9387350542241406 &q=${input.value}&aqi=no`
-  // )
-    
-axios(`https://api.weatherapi.com/v1/current.json?key=569c0fa5727f4e9387350542241406 &q=${card}&aqi=no`)
+  
+} , [status])
+
+
+function status(event) {
+  event.preventDefault();
+  
+  (Uinput.current.value === " ") ? 
+  alert("Let's have something Please Enter City") :
+  
+  axios(`https://api.weatherapi.com/v1/current.json?key=569c0fa5727f4e9387350542241406 &q=${Uinput.current.value}&aqi=no`)
 .then((res) =>{
-   console.log(res.data)}
+  console.log(res.data)
+  Weatherdata.push(res.data)
+  setWeatherdata(...Weatherdata) 
+  console.log(Weatherdata);
+  }
   )
-
 .catch((err) =>{
-  console.log("Error==>", err)})
+  console.log("Error==>", err)
+  alert("!There is an Error Please try Again!")
+})
+
+Uinput = ""
 }
-)
-
-
-
-
-
 
   return (
     <>
-      <div>
-        <h1 style={{textAlign:"center",
-          color:"wheat",
-          backgroundColor:"gray"
-        }}>W E A T H E R || A P P </h1>
+    <h1 className='h1'>Weather App</h1>
 
-        <form onSubmit={Card} >
-          <input type="text" placeholder='Enter City to Check Weather' ref={card}/>
-        </form>
 
-        </div>
+    <form onSubmit={status}>
+     
+     <input type="text" placeholder='Enter City to check Weather' ref={Uinput} />
+
+     <button>Search</button>
+
+    </form>
+
+
+    <div className='Card-container'>
+    {(
+    Weatherdata.map((item , id)=>
+    (<div key={id}>
+   <h2>{item.location.name}</h2>
+   <h3>{item.location.country}</h3>
+   <h3>{item.current.temp_c}°C</h3>
+   <h3>{item.current.condition.text}°C</h3>
+   <p>{item.current.humidity}%</p>
+   <p>{item.current.wind_kph}kph</p>
+
+    </div>)
+    )
+    )}
+    </div>
     </>
   )
 }
-
 export default App
+
+
+            // <div className="flex flex-wrap justify-center items-center gap-5">
+            //     {(
+            //         addweather.map((item, index) => (
+            //             <div key={index} className="card mt-12 ml-3 mr-3 w-[350px] bg-green-500 bg-opacity-30 backdrop-blur-sm text-white shadow-lg rounded-lg p-5">
+            //                 <h2 className="text-2xl font-semibold mb-2">{item.location.name}, {item.location.country}</h2>
+            //                 <p className="text-lg">Temperature: {item.current.temp_c}°C</p>
+            //                 <p className="text-lg">Condition: {item.current.condition.text}</p>
+            //                 <img src={item.current.condition.icon} alt="Weather condition" className="w-12 h-12 mt-3" />
+            //                 <p className="text-sm mt-2">Humidity: {item.current.humidity}%</p>
+            //                 <p className="text-sm">Wind Speed: {item.current.wind_kph} kph</p>
+            //             </div>
+            //         ))
+            //     )}
+            // </div>
+
+ 
+
+
