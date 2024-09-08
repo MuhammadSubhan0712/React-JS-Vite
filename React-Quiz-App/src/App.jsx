@@ -21,6 +21,7 @@ function App() {
       });
   }, []);
 
+
   // Function to shuffle the given options:
   function Shuffling(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -30,9 +31,10 @@ function App() {
     return array;
   }
 
-  // Function for the next question:
+ // Function for the next question:
   function nextQuestion() {
     const checkedBtn = checkinput.current.find(input => input.checked);
+    
     if (checkedBtn) {
       const selectedval = checkedBtn.value;
       if (selectedval === Question[QuestionState].correctAnswer) {
@@ -41,7 +43,7 @@ function App() {
     }
     if (QuestionState < Question.length - 1) {
       setQuestionState(QuestionState + 1);
-      checkinput.current = []
+      checkinput.current = []; 
     } 
     else {
       setResult(true);
@@ -99,7 +101,7 @@ function App() {
               </div>
             ) : (
               <div className="text-center">
-                <h2 className="text-4xl font-bold mb-4">Quiz Completed</h2>
+                <h2 className="text-4xl font-bold mb-4 text-yellow-300">Quiz Completed</h2>
                 <p className="text-2xl mb-4">
                   You have scored: {Score} / {Question.length * 10}
                 </p>
