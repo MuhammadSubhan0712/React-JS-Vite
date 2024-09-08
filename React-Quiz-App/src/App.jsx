@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from 'react';
-import axios from 'axios';
+import { useEffect, useRef, useState } from "react";
+import axios from "axios";
 
 function App() {
   const [Question, setQuestion] = useState([]);
@@ -21,7 +21,6 @@ function App() {
       });
   }, []);
 
-
   // Function to shuffle the given options:
   function Shuffling(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -31,10 +30,10 @@ function App() {
     return array;
   }
 
- // Function for the next question:
+  // Function for the next question:
   function nextQuestion() {
-    const checkedBtn = checkinput.current.find(input => input.checked);
-    
+    const checkedBtn = checkinput.current.find((input) => input.checked);
+
     if (checkedBtn) {
       const selectedval = checkedBtn.value;
       if (selectedval === Question[QuestionState].correctAnswer) {
@@ -43,9 +42,8 @@ function App() {
     }
     if (QuestionState < Question.length - 1) {
       setQuestionState(QuestionState + 1);
-      checkinput.current = []; 
-    } 
-    else {
+      checkinput.current = [];
+    } else {
       setResult(true);
     }
   }
@@ -60,14 +58,12 @@ function App() {
             <div className="space-x-4">
               <button
                 onClick={() => setStart(true)}
-                className="px-6 py-3 text-xl bg-green-600 text-white rounded-lg shadow-lg hover:bg-green-800 transition duration-300"
-              >
+                className="px-6 py-3 text-xl bg-green-600 text-white rounded-lg shadow-lg hover:bg-green-800 transition duration-300">
                 Let's start the quiz
               </button>
               <button
                 onClick={() => setExit(true)}
-                className="px-6 py-3 text-xl bg-red-600 text-white rounded-lg shadow-lg hover:bg-red-800 transition duration-300"
-              >
+                className="px-6 py-3 text-xl bg-red-600 text-white rounded-lg shadow-lg hover:bg-red-800 transition duration-300">
                 Exit
               </button>
             </div>
@@ -78,46 +74,60 @@ function App() {
                   Q{QuestionState + 1}: {Question[QuestionState].question.text}
                 </h2>
                 <ul className="space-y-4">
-                  {Shuffling([...Question[QuestionState].incorrectAnswers, Question[QuestionState].correctAnswer]).map((item, index) => (
+                  {Shuffling([
+                    ...Question[QuestionState].incorrectAnswers,
+                    Question[QuestionState].correctAnswer,
+                  ]).map((item, index) => (
                     <li key={index} className="flex items-center">
                       <input
                         type="radio"
                         name="choice"
                         id={item}
                         value={item}
-                        ref={el => (checkinput.current[index] = el)}
+                        ref={(el) => (checkinput.current[index] = el)}
                         className="mr-2"
                       />
-                      <label htmlFor={item} className="text-lg">{item}</label>
+                      <label htmlFor={item} className="text-lg">
+                        {item}
+                      </label>
                     </li>
                   ))}
                 </ul>
                 <button
                   onClick={nextQuestion}
-                  className="mt-6 w-full px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-700 transition duration-300"
-                >
+                  className="mt-6 w-full px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-700 transition duration-300">
                   Next
                 </button>
               </div>
             ) : (
               <div className="text-center">
-                <h2 className="text-4xl font-bold mb-4 text-yellow-300">Quiz Completed</h2>
+                <h2 className="text-4xl font-bold mb-4 text-yellow-300">
+                  Quiz Completed
+                </h2>
                 <p className="text-2xl mb-4">
                   You have scored: {Score} / {Question.length * 10}
                 </p>
                 {Score >= (Question.length * 10) / 2 ? (
-                  <p className="text-green-400 text-2xl font-bold">You have passed! 😊</p>
+                  <p className="text-green-400 text-2xl font-bold">
+                    You have passed! 😊
+                  </p>
                 ) : (
-                  <p className="text-red-400 text-2xl font-bold">You have failed. 😞</p>
+                  <p className="text-red-400 text-2xl font-bold">
+                    You have failed. 😞
+                  </p>
                 )}
               </div>
             )
           ) : (
-            <h1 className="text-2xl font-semibold text-gray-200 animate-pulse">Loading...</h1>
+            <h1 className="text-2xl font-semibold text-gray-200 animate-pulse">
+              Loading...
+            </h1>
           )}
         </>
       ) : (
-        <div className="text-4xl text-yellow-200 font-bold">"Program Terminated"</div>
+        <div className="text-4xl text-yellow-200 font-bold">
+          "Program Terminated"
+        </div>
       )}
     </div>
   );
