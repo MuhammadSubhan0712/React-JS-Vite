@@ -5,7 +5,7 @@ import axios from 'axios'
 function App() {
   const [Question, setQuestion] = useState([])
   const [QuestionState , setQuestionState] = useState(0)
-
+  const [Score , setScore] = useState(0)
   const checkinput = useRef([])
 
   useEffect(() => {
@@ -35,7 +35,6 @@ function Shuffling(array) {
 }
 
 
-
 // Function for the next question:
   function nextQuestion(index) {
     const checkedBtn =  checkinput.current.find(input => input.checked);
@@ -48,10 +47,12 @@ function Shuffling(array) {
 
 
 
-
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
       <h1 className="text-4xl font-bold text-blue-600 mb-6">Quiz App</h1>
+      
+      <button >Start the Quiz</button>
+    
       {Question.length > 0 ? (
         <div className="bg-white p-6 rounded-lg shadow-lg">
           <h2 className="text-2xl font-semibold mb-4">Q{QuestionState + 1}: {Question[QuestionState].question.text}</h2>
@@ -69,6 +70,8 @@ function Shuffling(array) {
         <h1 className="text-2xl font-semibold text-gray-700">Loading...</h1>
       )}
     </div>
+  
+
   )
 }
 
