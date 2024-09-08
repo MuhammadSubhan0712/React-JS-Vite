@@ -50,23 +50,25 @@ function Shuffling(array) {
 
 
   return (
-    <>
-     <h1>Quiz App</h1>
-      {Question.length > 0 ? <div>
-        <h2>Q{QuestionState + 1}: {Question[QuestionState].question.text}</h2>
-        <ul>
-          {Shuffling([...Question[QuestionState].incorrectAnswers , Question[QuestionState].correctAnswer]).map((item , index)=>{
-            return <li key={index}>
-            <input type="radio" name='choice' id={item} value={item} ref={el => (checkinput.current[index] = el)}/>
-            <label htmlFor={item}>{item}</label>
-          </li>
-          
-          })}
-        </ul>
-        <button onClick={()=> nextQuestion()}>Next {Question.length}</button>
-      </div> : <h1>Loading...</h1>}
-    </>
-
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+      <h1 className="text-4xl font-bold text-blue-600 mb-6">Quiz App</h1>
+      {Question.length > 0 ? (
+        <div className="bg-white p-6 rounded-lg shadow-lg">
+          <h2 className="text-2xl font-semibold mb-4">Q{QuestionState + 1}: {Question[QuestionState].question.text}</h2>
+          <ul className="space-y-4">
+            {Shuffling([...Question[QuestionState].incorrectAnswers, Question[QuestionState].correctAnswer]).map((item, index) => (
+              <li key={index} className="flex items-center">
+                <input type="radio" name="choice" id={item} value={item} ref={el => (checkinput.current[index] = el)} className="mr-2"/>
+                <label htmlFor={item} className="text-lg">{item}</label>
+              </li>
+            ))}
+          </ul>
+          <button onClick={nextQuestion} className="mt-6 px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-700">Next</button>
+        </div>
+      ) : (
+        <h1 className="text-2xl font-semibold text-gray-700">Loading...</h1>
+      )}
+    </div>
   )
 }
 
