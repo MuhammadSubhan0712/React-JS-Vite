@@ -9,7 +9,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background: linear-gradient(to bottom  ,  rgb(0, 0, 109) , rgb(78, 78, 78));
+  background: linear-gradient(90deg,  rgb(0, 0, 54) , rgb(250, 242, 250), rgb(34, 34, 34));
 }
 
 /* Card Container */

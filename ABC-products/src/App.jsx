@@ -2,6 +2,7 @@ import React from 'react'
 import './App.css'
 import Navigation from './components/Navigation'
 import Cards from './components/Cards'
+import Footer from './components/footer'
 
 function App() {
   const items = {}
@@ -27,11 +28,14 @@ function App() {
     <Cards image="https://images.olx.com.pk/thumbnails/480794840-240x180.jpeg" title="Ceiling Fan " price="15000" location="Karachi" contact="012314151"/>
     <Cards image="https://images.olx.com.pk/thumbnails/381547091-240x180.jpeg" title="Outdoor Lights" price="50000" location="Islamabad" contact="01234151"/>
   </div>
+  <br /><br />
+<div>
 
-
-
+<Footer/>
+</div>
     </>
   )
 }
+
 
 export default App
