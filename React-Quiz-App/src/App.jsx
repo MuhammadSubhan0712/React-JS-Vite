@@ -11,6 +11,7 @@ function App() {
   useEffect(() => {
 
     axios("https://the-trivia-api.com/v2/questions")
+
     .then((res) => { 
       console.log(res.data);
       setQuestion(res.data);
@@ -22,24 +23,29 @@ function App() {
     })
   }, [])
 
+
+// Function to shuffle the given options:
 function Shuffling(array) {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1)) ;
 
-    [array[i] , array[j] = array[j] , array[i]]
+    [array[i] , array[j]] = [array[j] , array[i]]
   }
   return array
 }
 
 
+
+// Function for the next question:
   function nextQuestion(index) {
     const checkedBtn =  checkinput.current.find(input => input.checked);
     if (checkedBtn) {
       const selectedval = checkedBtn.value;
       console.log("Selected Answer ==>" , selectedval);
     }
-    QuestionState < Question.length - 1 ? setQuestionState(Question + 1) : alert("Questions End");
+    QuestionState < Question.length - 1 ? setQuestionState(QuestionState + 1) : alert("Questions End");
   }
+
 
 
 
@@ -47,7 +53,7 @@ function Shuffling(array) {
     <>
      <h1>Quiz App</h1>
       {Question.length > 0 ? <div>
-        <h1>Q{QuestionState + 1}: {Question[QuestionState].Question.text}</h1>
+        <h2>Q{QuestionState + 1}: {Question[QuestionState].question.text}</h2>
         <ul>
           {Shuffling([...Question[QuestionState].incorrectAnswers , Question[QuestionState].correctAnswer]).map((item , index)=>{
             return <li key={index}>
