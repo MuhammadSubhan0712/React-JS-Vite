@@ -1,15 +1,12 @@
 import { createRoot } from 'react-dom/client'
-import App from './App.jsx'
-import './index.css'
-import { createBrowserRouter , RouterProvider } from 'react-router-dom'
-import Layout from './Layout.jsx'
+import "./index.css"
+import Layout from './Layour.jsx'
 import Home from './Pages/Home.jsx'
 import About from './Pages/About.jsx'
 import Contact from './Pages/Contact.jsx'
 import Services from './Pages/Services.jsx'
-import SingleStudent from './Pages/SingleStudent.jsx'
-import { RouterProvider } from 'react-router-dom'
-
+import SinglePerson from './Pages/SinglePerson.jsx'
+import { createBrowserRouter ,  RouterProvider } from 'react-router-dom'
 
 
 const router = createBrowserRouter([
@@ -28,15 +25,15 @@ children: [
     children:[
     {
     path: "",
-    element: <Person1/>,
+    element: <h1>Person 1</h1>,
     },
     {
       path: "person2",
-      element: <Person2/>,
+      element: <h1>Person 2</h1>,
     },
     {
       path: "person3",
-      element: <Person3/>,
+      element: <h1>Person 3</h1> ,
     }
   ]
   },
@@ -49,8 +46,8 @@ children: [
     element: <Services/>,
   },
   {
-    path: "singleStudent/:id",
-    element: <SingleStudent/>,
+    path: "singlePerson/:id",
+    element: <SinglePerson/>,
   },
   {
     path: "*",

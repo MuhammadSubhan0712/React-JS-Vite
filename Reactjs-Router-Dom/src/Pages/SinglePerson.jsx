@@ -1,6 +1,6 @@
 
 
-function SinglePerson() {
+const SinglePerson = () => {
     return(
         <>
         <h1>SinglePerson</h1>
