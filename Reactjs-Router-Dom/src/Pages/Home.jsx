@@ -16,9 +16,9 @@ const Home = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-r from-blue-900 via-black to-purple-900 py-8">
-    <div className="container mx-auto">
+    <div className="mt-8 container mx-auto">
    
-      <div className="flex flex-wrap justify-center gap-8">
+      <div className=" flex flex-wrap justify-around gap-10">
         {Data ? (
           Data.map((item) => (
             <Cards

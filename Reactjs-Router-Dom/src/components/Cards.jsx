@@ -5,7 +5,7 @@ const Cards = ({ image, title, category, price, count, rate }) => {
   const navigate = useNavigate();
 
   return (
-    <div className="card w-80 bg-white shadow-2xl hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+    <div className="card w-96 bg-white shadow-2xl hover:shadow-xl transform hover:scale-105 transition-all duration-300">
     <figure>
       <img
         src={image}
