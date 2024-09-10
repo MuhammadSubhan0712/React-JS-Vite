@@ -57,8 +57,14 @@ children: [
 }
 ])
 
-createRoot(document.getElementById('root')).render(
-<RouterProvider>
-router = {router}
-</RouterProvider>
-)
+export default function App(){
+  return(
+   <RouterProvider router={router}/>
+  )
+}
+
+// createRoot(document.getElementById('root')).render(
+// <RouterProvider>
+// router = {router}
+// </RouterProvider>
+// )
