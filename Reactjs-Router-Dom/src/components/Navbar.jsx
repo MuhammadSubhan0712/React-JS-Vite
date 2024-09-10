@@ -16,7 +16,7 @@ const  Navbar = () => {
         <Link to="contact">Contact</Link>
         <Link to="services">Services</Link>
     </div>
-        </>
+    </>
     )
 }
 

@@ -28,11 +28,11 @@ children: [
     },
     {
       path: "person2",
-      element: <h1>Person 2</h1>,
+      element: <h2>Person 2</h2>,
     },
     {
       path: "person3",
-      element: <h1>Person 3</h1>,
+      element: <h2>Person 3</h2>,
     },
   ]
   },

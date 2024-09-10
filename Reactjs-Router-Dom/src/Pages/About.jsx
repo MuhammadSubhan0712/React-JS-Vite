@@ -6,11 +6,10 @@ const About = () => {
         <>
         <h1>About</h1>
 
-        <button><Link to="">Person 1</Link> </button>
+        <button className="btn bg-inherit"><Link to="">Person 1</Link> </button>
         <button><Link to="person2">Person 2</Link></button>
         <button><Link to="person3">Person 3</Link></button>
         </>
     )
 }
-
 export default About
