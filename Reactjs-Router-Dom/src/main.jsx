@@ -5,7 +5,7 @@ import Home from './Pages/Home.jsx'
 import About from './Pages/About.jsx'
 import Contact from './Pages/Contact.jsx'
 import Services from './Pages/Services.jsx'
-import SinglePerson from './Pages/SinglePerson.jsx'
+import SingleProduct from './Pages/SingleProduct.jsx'
 import { createBrowserRouter ,  RouterProvider } from 'react-router-dom'
 
 const router = createBrowserRouter([
@@ -45,8 +45,8 @@ children: [
     element: <Services/>,
   },
   {
-    path: "singlePerson/:id",
-    element: <SinglePerson/>,
+    path: "singleproduct/:id",
+    element: <SingleProduct/>,
   },
   {
     path: "*",
