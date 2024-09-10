@@ -7,9 +7,19 @@ const Cards = ({ image, title, category, price, count, rate , items}) => {
   const navigate = useNavigate();
 
 
-  const singleUser = (p) => {
-    navigate(`SingleProduct/${p.id}`);
-  }
+//   const singleUser = (p) => {
+//     navigate(`SingleProduct/${p.id}`);
+//   }
+const singleUser = () => {
+    console.log("Items:", items); // Log the items prop to debug
+
+    if (items && items.id) {
+      navigate(`/SingleProduct/${items.id}`); // Ensure the correct route is used
+    } else {
+      console.error("Item ID is missing or items is undefined");
+    }
+  };
+
 
   return (
     <div className="card w-96 bg-white shadow-2xl hover:shadow-xl transform hover:scale-105 transition-all duration-300">
@@ -29,7 +39,7 @@ const Cards = ({ image, title, category, price, count, rate , items}) => {
         <div className="card-actions justify-end">
           <button
             className="btn btn-primary bg-gradient-to-r from-green-400 to-blue-500 hover:from-blue-500 hover:to-green-400 text-white"
-           onClick={singleUser(items)}>
+           onClick={singleUser}>
             See Details
           </button>
         </div>
