@@ -8,7 +8,6 @@ import Services from './Pages/Services.jsx'
 import SinglePerson from './Pages/SinglePerson.jsx'
 import { createBrowserRouter ,  RouterProvider } from 'react-router-dom'
 
-
 const router = createBrowserRouter([
   
 {
@@ -21,8 +20,8 @@ children: [
   },
   {
     path: "about",
-    element: <About/>,
-    children:[
+    element: <About />,
+    children: [
     {
     path: "",
     element: <h1>Person 1</h1>,
@@ -33,8 +32,8 @@ children: [
     },
     {
       path: "person3",
-      element: <h1>Person 3</h1> ,
-    }
+      element: <h1>Person 3</h1>,
+    },
   ]
   },
   {
@@ -57,14 +56,10 @@ children: [
 }
 ])
 
-export default function App(){
-  return(
-   <RouterProvider router={router}/>
-  )
-}
 
-// createRoot(document.getElementById('root')).render(
-// <RouterProvider>
-// router = {router}
-// </RouterProvider>
-// )
+createRoot(document.getElementById('root')).render(
+<RouterProvider
+router={router}>
+</RouterProvider>
+)
+
