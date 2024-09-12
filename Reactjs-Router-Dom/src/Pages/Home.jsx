@@ -26,8 +26,7 @@ const Home = () => {
                 title={item.title}
                 category={item.category}
                 price={item.price}
-                rate={item.rating.rate}
-                count={item.rating.count}
+                items={item}
               />
             ))
           ) : (

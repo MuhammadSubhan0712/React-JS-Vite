@@ -27,7 +27,6 @@ const SingleProduct = () => {
 
   return (
     <div className="container mx-auto p-4">
-      <h1 className="text-4xl font-bold text-center my-6">Product: {product.title}</h1>
       <div className="flex flex-col lg:flex-row items-center lg:items-start lg:space-x-8">
         <div className="w-full lg:w-1/2">
           <img
