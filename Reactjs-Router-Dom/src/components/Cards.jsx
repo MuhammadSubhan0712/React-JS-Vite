@@ -30,7 +30,7 @@ const Cards = ({ image, title, category , price, items }) => {
         <p className="text-white font-semibold">Price: ${price}</p>
         <div className="card-actions justify-end">
           <button
-            className="btn btn-primary bg-gradient-to-r from-green-400 to-blue-500 hover:from-blue-500 hover:to-green-400 text-white"
+            className="btn btn-primary text-white"
             onClick={() => singleUser(items)}
           >
             See Details
