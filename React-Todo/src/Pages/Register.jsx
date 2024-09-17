@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { useNavigate , Link } from "react-router-dom";
+import { useNavigate} from "react-router-dom";
 import { auth } from "../Config/Firebase/firebaseconfig";
 
 const Registration = () => {
@@ -12,6 +12,9 @@ const Registration = () => {
     confirmPassword: "",
   });
 
+  const log = () => {
+    navigate('/')
+  }
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
@@ -31,7 +34,7 @@ const Registration = () => {
       .then((userCredential) => {
         const user = userCredential.user;
         console.log("User created:", user);
-        navigate("login");
+        navigate("/");
       })
       .catch((error) => {
         console.log("Error==>", error.message);
@@ -58,7 +61,7 @@ const Registration = () => {
               name="username"
               value={formData.username}
               onChange={handleChange}
-              className="input input-bordered w-full"
+              className="w-full p-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
               placeholder="Enter your username"
               required
             />
@@ -72,7 +75,7 @@ const Registration = () => {
             <input
               value={formData.email}
               onChange={handleChange}
-              className="input input-bordered w-full"
+              className="w-full p-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
               placeholder="Enter your email"
               required
             />
@@ -88,7 +91,7 @@ const Registration = () => {
             <input
               value={formData.password}
               onChange={handleChange}
-              className="input input-bordered w-full"
+              className="w-full p-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
               placeholder="Enter your password"
               required
             />
@@ -104,7 +107,7 @@ const Registration = () => {
             <input
               value={formData.confirmPassword}
               onChange={handleChange}
-              className="input input-bordered w-full"
+              className="w-full p-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
               placeholder="Confirm your password"
               required
             />
@@ -112,7 +115,7 @@ const Registration = () => {
 
           {/* Submit Button */}
           <div className="form-control mt-6">
-            <button className="btn btn-primary w-full hover:bg-blue-700">
+            <button onClick={log}  className="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-lg text-white bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500">
               Register
             </button>
           </div>
@@ -122,10 +125,8 @@ const Registration = () => {
         <div className="text-center mt-4">
           <p className="text-gray-600">
             Already have an account?{" "}
-            <button className="text-blue-500 hover:underline">
-            <Link to="login">
+            <button onClick={log} className="text-blue-500 hover:underline">
             Log in
-            </Link>
             </button>
           
           </p>
