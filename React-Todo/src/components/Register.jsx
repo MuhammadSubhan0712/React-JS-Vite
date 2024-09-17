@@ -1,6 +1,34 @@
-import React, { useState } from "react";
-import { Outlet } from "react-router-dom";
+import React, { useRef, useState } from "react";
+import {createUserWithEmailAndPassword } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
+import { auth } from "../Config/Firebase/firebaseconfig";
+
+
+
 const Registration = () => {
+const username = useRef();
+const email = useRef();
+const password = useRef();
+
+
+const CreateUser = (event) => {
+event.preventDefault();
+
+createUserWithEmailAndPassword(
+    auth, 
+    email.current.value, 
+    password.current.value
+)
+  .then((userCredential) => {
+    const user = userCredential.user;
+    console.log(user);
+  })
+  .catch((error) => {
+    const errorMessage = error.message;
+    console.log("Error==>" , errorMessage);
+  });
+}
+
   const [formData, setFormData] = useState({
     username: "",
     email: "",
@@ -35,13 +63,11 @@ const Registration = () => {
               <span className="label-text font-medium text-gray-700">Username</span>
             </label>
             <input
-              type="text"
-              name="username"
               value={formData.username}
               onChange={handleChange}
               className="input input-bordered w-full"
               placeholder="Enter your username"
-              required
+              required ref={username}
             />
           </div>
 
@@ -51,13 +77,12 @@ const Registration = () => {
               <span className="label-text font-medium text-gray-700">Email</span>
             </label>
             <input
-              type="email"
-              name="email"
+
               value={formData.email}
               onChange={handleChange}
               className="input input-bordered w-full"
               placeholder="Enter your email"
-              required
+              required ref={email}
             />
           </div>
 
@@ -67,13 +92,11 @@ const Registration = () => {
               <span className="label-text font-medium text-gray-700">Password</span>
             </label>
             <input
-              type="password"
-              name="password"
               value={formData.password}
               onChange={handleChange}
               className="input input-bordered w-full"
               placeholder="Enter your password"
-              required
+              required ref={password}
             />
           </div>
 

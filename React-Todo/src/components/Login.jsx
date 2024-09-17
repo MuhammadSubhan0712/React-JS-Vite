@@ -1,16 +1,45 @@
+import { signInWithEmailAndPassword } from "firebase/auth";
+import React , { useRef } from "react";
+import {Link , useNavigate} from "react-router-dom";
+import { auth } from "../Config/Firebase/firebaseconfig";
 
-import {Link } from "react-router-dom";
 const Login = () => {
+const email = useRef();
+const password = useRef();
+const navigate = useNavigate();
 
+// Login User Function / Firebase authentication
+const loginUser = ((event) => {
+    event.preventDefault();
+
+signInWithEmailAndPassword(
+    auth, 
+    email.current.value,
+    password.current.value,
+)
+  .then((userCredential) => {
+    
+    const user = userCredential.user;
+    console.log(user);
+    navigate("todo")
+    
+    
+  })
+  .catch((error) => {
+    const errorMessage = error.message;
+    console.log("Error==>" ,errorMessage);
+  });
+});
 
     return (
+        <>
       <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-gray-800 via-gray-900 to-black">
         <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
           <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">Login</h2>
   
 
           {/* Login Form */}
-          <form className="space-y-6">
+          <form onSubmit={loginUser} className="space-y-6">
 
             {/* Email Input */}
             <div>
@@ -18,13 +47,11 @@ const Login = () => {
                 Email
               </label>
               <div className="mt-1">
-                <input
-                  id="email"
-                  name="email"
+                <input            
                   type="email"
                   required
                   className="w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                  placeholder="Enter your email"
+                  placeholder="Enter your email" ref={email}
                 />
               </div>
             </div>
@@ -36,12 +63,10 @@ const Login = () => {
               </label>
               <div className="mt-1">
                 <input
-                  id="password"
-                  name="password"
                   type="password"
                   required
                   className="w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                  placeholder="Enter your password"
+                  placeholder="Enter your password" ref={password}
                 />
               </div>
             </div>
@@ -60,14 +85,12 @@ const Login = () => {
                 </label>
               </div>
   
-              <div className="text-sm">
+               {/* <div className="text-sm">
                 <a href="#" className="font-medium text-purple-600 hover:text-purple-500">
                   Forgot your password?
                 </a>
+              </div> */}
               </div>
-            </div>
-  
-            
             <div>
               <button  
               type="submit"
@@ -77,8 +100,6 @@ const Login = () => {
               </button>
             </div>
           </form>
-  
-          
           <div className="mt-6 text-center">
             <p className="text-gray-600">
               Do not have an account?{" "}
@@ -91,6 +112,7 @@ const Login = () => {
           </div>
         </div>
       </div>
+      </>
     );
   };
   
