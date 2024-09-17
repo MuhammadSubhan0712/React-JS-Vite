@@ -2,35 +2,43 @@ import { createRoot } from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import Login from './Pages/Login.jsx'
 import Layout from './Layout.jsx'
-import Register from './Pages/Register.jsx'
-import Todo from './Pages/Todo_form.jsx'
+import Login from './components/Login.jsx'
+import Registration from './components/Register.jsx'
+import Todo from './components/Todo.jsx'
 
 
-const router = createBrowserRouter[ {
-
-path: "/",
-element: <Layout />,
-children:[
+const router = createBrowserRouter[ 
   {
-    path: "/",
-    element:<Login />,
-  },
-  {
-    path: "register",
-    element:<Register />,
-  },
-  {
-    path: "todo-form"
-    element:<Todo />,
-  },
+    path:"/",
+    element:<Layout />,
+  children:[
+    {
+    path:"/",
+    element:<Login/>,
+    },
+    {
+      path: "register",
+      element: <Registration/>,
+    },
+    {
+      path:"todo",
+      element:<Todo/>
+    },
+  ]
+},
+{
+  path: "*",
+  element: <h2>Not Found</h2>
+}
 ]
-} ]
+
+
+
+
 
 createRoot(document.getElementById('root')).render(
-<RouterProvider router={router} >
-<App />
+<RouterProvider router={router}>
+  <App />
 </RouterProvider>
-  
 )

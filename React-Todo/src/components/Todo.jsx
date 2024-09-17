@@ -1,5 +1,6 @@
 import { useState, useRef } from "react";
-import './index.css'
+import "./index.css"
+
 
 function Todo() {
   const [todo, setTodo] = useState([]);
@@ -33,6 +34,7 @@ function Todo() {
   };
 
   return (
+    <>
     <div className="min-h-screen bg-gray-800 flex items-center justify-center p-4">
       <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
         <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">Todo Todo</h2>
@@ -46,7 +48,7 @@ function Todo() {
             ref={todoVal}
           />
           <button
-            className="bg-gradient-to-r from-green-400 to-blue-500 text-white px-4 py-2 rounded-lg shadow hover:from-blue-500 hover:to-green-400 transition-all duration-300"
+            className="bg-gradient-to-r from-blue-900 to-blue-800 border-t-violet-950 text-white px-4 py-2 rounded-lg shadow hover:text-blue-300 transition-all duration-300"
             type="submit"
           >
             Add Todo
@@ -84,6 +86,7 @@ function Todo() {
         </ul>
       </div>
     </div>
+    </>
   );
 }
 
