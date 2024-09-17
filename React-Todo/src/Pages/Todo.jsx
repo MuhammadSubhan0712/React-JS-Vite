@@ -9,14 +9,12 @@ import {
   updateDoc,
   Timestamp,
   orderBy,
-
 } from "firebase/firestore";
 
 import { auth, db } from "../Config/Firebase/firebaseconfig";
 
 
 const Todo = () => {
-
 
   async function getData() {
     const q = query(collection(db , "todos" ) , orderBy ("time" , "desc"));
@@ -32,6 +30,7 @@ const Todo = () => {
 
   const [todo, setTodo] = useState([]);
   const todoVal = useRef();
+
 
   // To add todo
   const addTodo = async(event) => {
