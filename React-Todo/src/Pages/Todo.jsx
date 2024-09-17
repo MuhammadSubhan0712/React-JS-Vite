@@ -1,11 +1,40 @@
 import { useState, useRef } from "react";
+import {
+  query,
+  collection,
+  addDoc, 
+  getDocs, 
+  deleteDoc,
+  doc,
+  updateDoc,
+  Timestamp,
+  orderBy,
 
-function Todo() {
+} from "firebase/firestore";
+
+import { auth, db } from "../Config/Firebase/firebaseconfig";
+
+
+const Todo = () => {
+
+
+  async function getData() {
+    const q = query(collection(db , "todos" ) , orderBy ("time" , "desc"));
+    const querySnapshot = await getDocs(q);
+    const todos = [];
+    querySnapshot.forEach((doc) => {
+      todo.push({ id: doc.id, ...doc.data() });  
+    });
+    setTodo(todos);  
+  }
+
+  {getData}
+
   const [todo, setTodo] = useState([]);
   const todoVal = useRef();
 
   // To add todo
-  const addTodo = (event) => {
+  const addTodo = async(event) => {
     event.preventDefault();
     if (todoVal.current.value === "") {
       alert("Please Enter todo");
@@ -14,22 +43,52 @@ function Todo() {
       setTodo([...todo]);
       todoVal.current.value = "";
     }
+
+    try {
+      const docRef = await addDoc(collection(db, "todos"), {
+        todo: todoVal.current.value,
+        time: Timestamp.fromDate(new Date()),
+      });
+      console.log("Document written with ID: ", docRef.id);
+      setTodo([...todo, { id: docRef.id, 
+      todo: todoVal.current.value,
+      time: Timestamp.fromDate(new Date()), }]);
+
+
+    } catch (e) {
+      console.error("Error adding document: ", e);
+    }
   };
 
+
+
   // To Edit Todo
-  const EditTodo = (index) => {
+  const EditTodo = async(index) => {
     const editVal = prompt("Enter Updated Value");
     if (editVal) {
       todo.splice(index, 1, editVal);
       setTodo([...todo]);
+      const toUpdate = doc(db, "todos", [index].id);
+
+      await updateDoc(toUpdate, {
+        todo: toUpdate,
+      });
+      console.log("Values has been Updated");
     }
+
   };
 
   // To Delete Todo
-  const DeleteTodo = (index) => {
+  const DeleteTodo = async(index) => {
     todo.splice(index, 1);
     setTodo([...todo]);
+
+    // To delete todo in the firebase
+    await deleteDoc(doc(db, "todos", index));
+    console.log("Todo Deleted Successfully");
+    
   };
+
 
   return (
     <>
