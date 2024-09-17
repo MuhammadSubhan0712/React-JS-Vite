@@ -1,12 +1,17 @@
 
+import {Link } from "react-router-dom";
 const Login = () => {
+
+
     return (
       <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-gray-800 via-gray-900 to-black">
         <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
           <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">Login</h2>
   
+
           {/* Login Form */}
           <form className="space-y-6">
+
             {/* Email Input */}
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-gray-700">
@@ -24,7 +29,7 @@ const Login = () => {
               </div>
             </div>
   
-            {/* Password Input */}
+            
             <div>
               <label htmlFor="password" className="block text-sm font-medium text-gray-700">
                 Password
@@ -41,7 +46,7 @@ const Login = () => {
               </div>
             </div>
   
-            {/* Remember Me Checkbox */}
+            
             <div className="flex items-center justify-between">
               <div className="flex items-center">
                 <input
@@ -62,7 +67,7 @@ const Login = () => {
               </div>
             </div>
   
-            {/* Submit Button */}
+            
             <div>
               <button  
               type="submit"
@@ -73,13 +78,15 @@ const Login = () => {
             </div>
           </form>
   
-          {/* Footer Text */}
+          
           <div className="mt-6 text-center">
             <p className="text-gray-600">
               Do not have an account?{" "}
-              <a href="../Register.jsx" className="text-purple-600 hover:text-purple-500 font-medium">
-              Sign up
-              </a>
+              <button className="text-purple-600 hover:text-purple-500 font-medium">
+                <Link to="register">
+                Sign up
+                </Link>
+              </button>
             </p>
           </div>
         </div>

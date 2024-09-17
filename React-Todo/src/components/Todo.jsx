@@ -1,6 +1,4 @@
 import { useState, useRef } from "react";
-import "./index.css"
-
 
 function Todo() {
   const [todo, setTodo] = useState([]);
