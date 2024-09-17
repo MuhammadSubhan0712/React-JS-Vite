@@ -8,7 +8,7 @@ const email = useRef();
 const password = useRef();
 const navigate = useNavigate();
 
-// Login User Function / Firebase authentication
+// Login User Function / Firebase 
 const loginUser = ((event) => {
     event.preventDefault();
 

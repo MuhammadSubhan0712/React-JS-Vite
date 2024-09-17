@@ -1,4 +1,4 @@
-import {onAuthStateChanged } from 'firebase/auth';
+import {getAuth , onAuthStateChanged } from 'firebase/auth';
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
@@ -8,7 +8,8 @@ const [userloggedIn , setuserLoggedIn] = useState(false);
 const navigate = useNavigate();
 
 useEffect(() =>{
-onAuthStateChanged((user) =>{
+    const auth = getAuth();
+onAuthStateChanged(auth , (user) =>{
     if(user) {
         console.log(user.uid);
         setuserLoggedIn(true);
@@ -17,10 +18,11 @@ onAuthStateChanged((user) =>{
         navigate("login")
      }
 });
+
 if(!userloggedIn) {
     navigate("login")
 }
-}, [])
+},[])
 
 return(
     <>

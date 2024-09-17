@@ -4,17 +4,16 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Layout from './Layout.jsx'
 import Login from './components/Login.jsx'
 import Registration from './components/Register.jsx'
-
 import ProtectedRoutes from './components/ProtectedRoutes.jsx'
 
 
 const router = createBrowserRouter([ 
   {
     path:"/",
-    element:<ProtectedRoutes component={<Layout/>} />,
+    element:<ProtectedRoutes component={<Layout/>}/>,
   },
   {
-    path:"Login",
+    path:"login",
     element:<Login/>,
     },
     {
@@ -23,7 +22,7 @@ const router = createBrowserRouter([
     },
 {
   path: "*",
-  element: <h2>Not Found</h2>
+  element: <h2 className='flex justify-center mt-10 p-5 text-3xl'>Not Found</h2>
 },
 ]);
 
