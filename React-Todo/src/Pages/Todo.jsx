@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import {
   query,
   collection,
@@ -11,7 +11,7 @@ import {
   orderBy,
 } from "firebase/firestore";
 
-import { auth, db } from "../Config/Firebase/firebaseconfig";
+import { db } from "../Config/Firebase/firebaseconfig";
 
 
 const Todo = () => {
@@ -21,37 +21,45 @@ const Todo = () => {
     const querySnapshot = await getDocs(q);
     const todos = [];
     querySnapshot.forEach((doc) => {
-      todo.push({ id: doc.id, ...doc.data() });  
+      todos.push({ id: doc.id, ...doc.data() });  
     });
     setTodo(todos);  
   }
 
-  {getData}
 
   const [todo, setTodo] = useState([]);
   const todoVal = useRef();
 
+  useEffect(() => {
+    getData();
+  },[])
 
   // To add todo
   const addTodo = async(event) => {
     event.preventDefault();
-    if (todoVal.current.value === "") {
+    let todoValue = todoVal.current.value;
+    if (todoValue === "") {
       alert("Please Enter todo");
-    } else {
-      todo.push(todoVal.current.value);
+      return;
+    } 
+    else {
+      todo.push(todoValue);
       setTodo([...todo]);
-      todoVal.current.value = "";
+      todoValue = "";
     }
 
     try {
       const docRef = await addDoc(collection(db, "todos"), {
-        todo: todoVal.current.value,
+        todo: todoValue,
         time: Timestamp.fromDate(new Date()),
       });
       console.log("Document written with ID: ", docRef.id);
-      setTodo([...todo, { id: docRef.id, 
-      todo: todoVal.current.value,
+      setTodo([...todo, 
+      { id: docRef.id, 
+      todo: todoValue,
       time: Timestamp.fromDate(new Date()), }]);
+      todoValue = "";
+
 
 
     } catch (e) {
@@ -62,15 +70,15 @@ const Todo = () => {
 
 
   // To Edit Todo
-  const EditTodo = async(index) => {
+  const EditTodo = async(i) => {
     const editVal = prompt("Enter Updated Value");
     if (editVal) {
-      todo.splice(index, 1, editVal);
+      todo.splice(i, 1, editVal);
       setTodo([...todo]);
-      const toUpdate = doc(db, "todos", [index].id);
+      const toUpdate = doc(db, "todos", todo[i].id);
 
       await updateDoc(toUpdate, {
-        todo: toUpdate,
+        todo: editVal,
       });
       console.log("Values has been Updated");
     }
@@ -78,12 +86,12 @@ const Todo = () => {
   };
 
   // To Delete Todo
-  const DeleteTodo = async(index) => {
-    todo.splice(index, 1);
+  const DeleteTodo = async(i) => {
+    todo.splice(i, 1);
     setTodo([...todo]);
 
     // To delete todo in the firebase
-    await deleteDoc(doc(db, "todos", index));
+    await deleteDoc(doc(db, "todos", todo[i].id));
     console.log("Todo Deleted Successfully");
     
   };
@@ -93,7 +101,7 @@ const Todo = () => {
     <>
     <div className="min-h-screen bg-gray-800 flex items-center justify-center p-4">
       <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
-        <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">Todo Todo</h2>
+        <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">Todo</h2>
 
         {/* Todo form */}
         <form className="flex space-x-4" onSubmit={addTodo}>
@@ -119,7 +127,7 @@ const Todo = () => {
                 key={index}
                 className="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow-lg"
               >
-                <span className="text-gray-800">{item}</span>
+                <span className="text-gray-800">{item.todo}</span>
                 <div className="space-x-2">
                   <button
                     onClick={() => EditTodo(index)}

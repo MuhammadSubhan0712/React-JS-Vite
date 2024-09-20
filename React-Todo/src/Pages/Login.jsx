@@ -19,14 +19,13 @@ const loginUser = ((event) => {
 signInWithEmailAndPassword(
     auth, 
     email.current.value,
-    password.current.value,
+    password.current.value
 )
   .then((userCredential) => {
     
     const user = userCredential.user;
     console.log(user);
     navigate('todo')
-    
     
   })
   .catch((error) => {
@@ -52,8 +51,10 @@ signInWithEmailAndPassword(
                 Email
               </label>
               <div className="mt-1">
-                <input            
+                <input     
+                  name="email"       
                   type="email"
+                  
                   required
                   className="w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
                   placeholder="Enter your email" ref={email}
@@ -68,7 +69,9 @@ signInWithEmailAndPassword(
               </label>
               <div className="mt-1">
                 <input
+                  name="password"
                   type="password"
+            
                   required
                   className="w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
                   placeholder="Enter your password" ref={password}
@@ -90,11 +93,7 @@ signInWithEmailAndPassword(
                 </label>
               </div>
   
-               {/* <div className="text-sm">
-                <a href="#" className="font-medium text-purple-600 hover:text-purple-500">
-                  Forgot your password?
-                </a>
-              </div> */}
+  
               </div>
             <div>
               <button
