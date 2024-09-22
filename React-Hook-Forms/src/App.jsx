@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
-
+import { School } from 'lucide-react';
 function App() {
   const { register, handleSubmit, formState: { errors } } = useForm();
   const [submitted, setSubmitted] = useState(false);
@@ -14,9 +14,16 @@ function App() {
     <>
       <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100">
         
-        <div className="p-5 flex justify-start bg-blue-700 text-xl text-white w-full">
-          Academic Form
+        <div className='p-5 flex justify-between bg-blue-700 w-full'>
+        <div className=" text-xl text-white">
+         Code Craft Academy
         </div>
+        <div className=' text-white' >
+        <School />
+     
+        </div>
+        </div>
+          
 
                            {/* Buttons Field */}
         <div className="text-center mb-6 mt-3 p-2 border-sky-100 rounded-lg bg-slate-50">
@@ -32,7 +39,7 @@ function App() {
         </div>
 
 
-        <div className="w-full max-w-4xl bg-white shadow-md rounded-lg p-8">
+        <div className="w-full max-w-8xl bg-white shadow-md rounded-lg p-8">
 
           {submitted ? (
             <div className="alert alert-success">
@@ -138,7 +145,6 @@ function App() {
                     {...register('gender', { required: "Gender is required" })}
                     className={`select select-bordered w-full mt-1 ${errors.gender && 'border-red-500'}`}
                   >
-                    <option value="">Select Gender</option>
                     <option value="male">Male</option>
                     <option value="female">Female</option>
                     <option value="other">Other</option>
@@ -154,7 +160,6 @@ function App() {
                     {...register('laptop', { required: "Laptop status is required" })}
                     className={`select select-bordered w-full mt-1 ${errors.laptop && 'border-red-500'}`}
                   >
-                    <option value="">Select Option</option>
                     <option value="yes">Yes</option>
                     <option value="no">No</option>
                   </select>
@@ -182,7 +187,6 @@ function App() {
                     {...register('qualification', { required: "Qualification is required" })}
                     className={`select select-bordered w-full mt-1 ${errors.qualification && 'border-red-500'}`}
                   >
-                    <option value="">Select Qualification</option>
                     <option value="matric">Matric</option>
                     <option value="intermediate">Intermediate</option>
                     <option value="bachelors">Bachelors</option>
