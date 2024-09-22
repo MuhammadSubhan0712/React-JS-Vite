@@ -13,12 +13,18 @@ function App() {
   return (
     <>
       <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100">
-        <div className="p-5 flex justify-start bg-blue-700 text-white w-full">
+        <div className="p-5 flex justify-start bg-blue-700 text-xl text-white w-full">
           Academic Form
         </div>
         <div className="text-center mb-6 mt-3 p-1 bg-slate-100">
           <button className="btn bg-slate-100">Admission Form</button>
           <button className="btn bg-slate-100">Verify Admission</button>
+        </div>
+
+        <div className="text-center text-2xl text-black mb-6 mt-1 p-1" >
+          <h2>
+            Admission Form
+          </h2>
         </div>
         <div className="w-full max-w-4xl bg-white shadow-md rounded-lg p-8">
           {submitted ? (
@@ -140,22 +146,7 @@ function App() {
                   {errors.laptop && <span className="text-red-500">{errors.laptop.message}</span>}
                 </label>
 
-                {/* Profile Image */}
-                <label className="block">
-                  <span className="text-gray-700">Profile Image</span>
-                  <input
-                    type="file"
-                    id="file"
-                    className="input input-bordered w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-                    placeholder="Choose file"
-                  />
-                  <ul className="text-sm text-gray-500">
-                    <li>With white or blue background</li>
-                    <li>File type: jpg, jpeg, png</li>
-                    <li>Upload your recent passport-size picture</li>
-                    <li>Your face should be clearly visible without any glasses</li>
-                  </ul>
-                </label>
+              
 
                 {/* Address */}
                 <label className="block">
@@ -183,6 +174,24 @@ function App() {
                     <option value="masters">Masters</option>
                   </select>
                   {errors.qualification && <span className="text-red-500">{errors.qualification.message}</span>}
+                </label>
+
+
+                  {/* Profile Image */}
+                  <label className="block">
+                  <span className="text-gray-700">Profile Image</span>
+                  <input
+                    type="file"
+                    id="file"
+                    className="input input-bordered w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+                    placeholder="Choose file"
+                  />
+                  <ul className="text-sm text-gray-500">
+                    <li>With white or blue background</li>
+                    <li>File type: jpg, jpeg, png</li>
+                    <li>Upload your recent passport-size picture</li>
+                    <li>Your face should be clearly visible without any glasses</li>
+                  </ul>
                 </label>
               </div>
 
