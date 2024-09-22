@@ -7,6 +7,13 @@ function App() {
     event.preventDefault(); // Prevent page refresh
     setSubmitted(true); // Mark form as submitted
   };
+
+  return (
+    <>
+      <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100">
+        <div className='p-5 flex justify-start bg-blue-700 text-white w-full'>
+        Academic Form
+        </div>  
         <div className="text-center mb-6 mt-3 p-1 bg-black">
             <button className="btn">Admission Form</button>
             <button className="btn">Verify Admission</button>
