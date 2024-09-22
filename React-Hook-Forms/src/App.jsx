@@ -12,23 +12,7 @@ function App() {
             <button className="btn">Verify Admission</button>
         </div>
 
-        <div className="w-full max-w-lg bg-white shadow-md rounded-lg p-8">
-  
-          {submitted ? (
-            <div className="alert alert-success">
-              <h3>Form has been submitted.</h3>
-            </div>
-          ) : (
-            <form onSubmit={Submission} className="space-y-4">
-              {/* Full Name */}
-              <label className="block">
-                <span className="text-gray-700">Full Name</span>
-                <input
-                  type="text"
-                  name="fullName"
-                  placeholder="Full Name"
-                  className="input input-bordered w-full mt-1"
-                />
+        <div className="w-f
               </label>
 
               {/* Father's Name */}
