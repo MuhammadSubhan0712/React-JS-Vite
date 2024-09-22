@@ -13,28 +13,36 @@ function App() {
   return (
     <>
       <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100">
+        
         <div className="p-5 flex justify-start bg-blue-700 text-xl text-white w-full">
           Academic Form
         </div>
-        <div className="text-center mb-6 mt-3 p-1 bg-slate-100">
-          <button className="btn bg-slate-100">Admission Form</button>
-          <button className="btn bg-slate-100">Verify Admission</button>
+
+                           {/* Buttons Field */}
+        <div className="text-center mb-6 mt-3 p-2 border-sky-100 rounded-lg bg-slate-50">
+          <button className="btn bg-slate-50">Admission Form</button>
+          <button className="btn bg-slate-50">Verify Admission</button>
         </div>
+
 
         <div className="text-center text-2xl text-black mb-6 mt-1 p-1" >
           <h2>
             Admission Form
           </h2>
         </div>
+
+
         <div className="w-full max-w-4xl bg-white shadow-md rounded-lg p-8">
+
           {submitted ? (
             <div className="alert alert-success">
               <h3>Form has been submitted.</h3>
             </div>
           ) : (
             <form onSubmit={handleSubmit(Submission)} className="space-y-6">
-              <div className="grid grid-cols-2 gap-4">
-                {/* Full Name */}
+              <div className="grid grid-cols-2 gap-7">
+
+                {/* Full Name input field*/}
                 <label className="block">
                   <span className="text-gray-700">Full Name</span>
                   <input
@@ -46,7 +54,8 @@ function App() {
                   {errors.fullName && <span className="text-red-500">{errors.fullName.message}</span>}
                 </label>
 
-                {/* Father's Name */}
+
+                {/* Father's Name input field*/}
                 <label className="block">
                   <span className="text-gray-700">Father Name</span>
                   <input
@@ -58,7 +67,8 @@ function App() {
                   {errors.fatherName && <span className="text-red-500">{errors.fatherName.message}</span>}
                 </label>
 
-                {/* Email */}
+
+                {/* Email input field*/}
                 <label className="block">
                   <span className="text-gray-700">Email</span>
                   <input
@@ -76,7 +86,8 @@ function App() {
                   {errors.email && <span className="text-red-500">{errors.email.message}</span>}
                 </label>
 
-                {/* Phone Number */}
+
+                {/* Phone Number input field */}
                 <label className="block">
                   <span className="text-gray-700">Phone Number</span>
                   <input
@@ -88,7 +99,8 @@ function App() {
                   {errors.phone && <span className="text-red-500">{errors.phone.message}</span>}
                 </label>
 
-                {/* CNIC */}
+
+                {/* CNIC input field*/}
                 <label className="block">
                   <span className="text-gray-700">National ID (CNIC)</span>
                   <input
@@ -106,7 +118,8 @@ function App() {
                   {errors.cnic && <span className="text-red-500">{errors.cnic.message}</span>}
                 </label>
 
-                {/* Date of Birth */}
+
+                {/* Date of Birth input field*/}
                 <label className="block">
                   <span className="text-gray-700">Date of Birth</span>
                   <input
@@ -117,7 +130,8 @@ function App() {
                   {errors.dob && <span className="text-red-500">{errors.dob.message}</span>}
                 </label>
 
-                {/* Gender */}
+
+                {/* Gender select field*/}
                 <label className="block">
                   <span className="text-gray-700">Gender</span>
                   <select
@@ -132,7 +146,8 @@ function App() {
                   {errors.gender && <span className="text-red-500">{errors.gender.message}</span>}
                 </label>
 
-                {/* Laptop */}
+
+                {/* Laptop select field */}
                 <label className="block">
                   <span className="text-gray-700">Do you have a laptop?</span>
                   <select
@@ -147,8 +162,7 @@ function App() {
                 </label>
 
               
-
-                {/* Address */}
+                {/* Address input field*/}
                 <label className="block">
                   <span className="text-gray-700">Address</span>
                   <input
@@ -160,7 +174,8 @@ function App() {
                   {errors.address && <span className="text-red-500">{errors.address.message}</span>}
                 </label>
 
-                {/* Last Qualification */}
+
+                {/* Last Qualification select field*/}
                 <label className="block">
                   <span className="text-gray-700">Last Qualification</span>
                   <select
@@ -177,7 +192,7 @@ function App() {
                 </label>
 
 
-                  {/* Profile Image */}
+                  {/* Profile Image input field */}
                   <label className="block">
                   <span className="text-gray-700">Profile Image</span>
                   <input
@@ -194,6 +209,7 @@ function App() {
                   </ul>
                 </label>
               </div>
+
 
               {/* Submit Button */}
               <button type="submit" className="btn btn-primary w-full mt-4">
