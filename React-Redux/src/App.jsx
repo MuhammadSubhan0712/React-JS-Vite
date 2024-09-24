@@ -35,12 +35,14 @@ function App() {
          dispatch(removetodo({index}))
   }
 
-  
+  // React-Redux : Todo App / BulmaCss
 
 
 
   return (
     <>
+    <div>
+
      <Navbar/>
      <section className="section">
         <div className="container">
@@ -82,7 +84,7 @@ function App() {
                   </div>
                   <div className="level-right">
                     <div className="level-item">
-                      <button className="button is-warning is-small mr-2">
+                      <button onClick={() => updatetodoInRedux(index)} className="button is-warning is-small mr-2">
                         <span className="icon is-small">
                           <i className="fas fa-edit"></i>
                         </span>
@@ -104,7 +106,8 @@ function App() {
           </div>
         </div>
       </section>
-
+      
+      </div>
     </>
   )
 }
