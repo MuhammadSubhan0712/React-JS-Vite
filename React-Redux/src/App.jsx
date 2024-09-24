@@ -1,7 +1,7 @@
 import { useRef } from 'react'
 import Navbar from './components/Navbar'
 import { useDispatch, useSelector } from 'react-redux';
-import { addtodo, removetodo } from './config/reducer/todoSlice';
+import { addtodo, removetodo, updatetodo } from './config/reducer/todoSlice';
 
 function App() {
   
@@ -21,19 +21,20 @@ function App() {
     }))
     todoVal.current.value = ""
   }
+      // To Update the item in todo
+  const updatetodoInRedux = (index) => {
+    const updVal = prompt("Enter Upated Value");
+    console.log("Item has updated at index # :" , index);
+    dispatch(updatetodo({index , updVal}))
+  }
+
+      // To Delete the item in todo
 
   const deletetodoitemInRedux = (index) => {
          console.log("Item has deleted at index # :" , index);
          dispatch(removetodo({index}))
   }
 
-  const updatetodoInRedux = (index , updVal) => {
-    const updVal = prompt("Enter Upated Value");
-    console.log("Item has updated at index # " , index);
-    dispatch()
-  }
-
-  
   
 
 
