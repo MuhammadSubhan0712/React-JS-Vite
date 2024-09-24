@@ -97,7 +97,7 @@ function App() {
                 </div>
               ))
             ) : (
-              <p className='has-text-centered'>No todos added yet.</p>
+              <p className='p-2 has-text-centered has-background-dark has-text-white '>No todos added yet.</p>
             )}
           </div>
         </div>
