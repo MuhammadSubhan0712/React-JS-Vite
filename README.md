@@ -19,3 +19,5 @@
 <p><a href="https://react-todo-firebase-subh.netlify.app/">Click React-Todo With Firebase</p>
 
 <p><a href="https://react-hook-form-subh.netlify.app/">Click React-Hook-Forms</p>
+
+<p><a href="https://react-redux-todo-subh.netlify.app/">Click React-Redux: Todo-App</p>
