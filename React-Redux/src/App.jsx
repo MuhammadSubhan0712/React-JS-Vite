@@ -27,10 +27,10 @@ function App() {
          dispatch(removetodo({index}))
   }
 
-  const updatetodoInRedux = (index) => {
-   export const updVal = prompt("Enter Upated Value");
-   
-
+  const updatetodoInRedux = (index , updVal) => {
+    const updVal = prompt("Enter Upated Value");
+    console.log("Item has updated at index # " , index);
+    dispatch()
   }
 
   
