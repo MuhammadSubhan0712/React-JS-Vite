@@ -32,6 +32,7 @@ function App() {
     dispatch(updatetodo({ index, updVal }));
   };
 
+  
   // To Delete the item in todo
 
   const deletetodoitemInRedux = (index) => {
