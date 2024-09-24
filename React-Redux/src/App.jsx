@@ -10,8 +10,7 @@ function App() {
 
   const dispatch  = useDispatch();
 
-
-  const selector = useSelector(state => state.todos.todo);
+  const selector = useSelector(state => state.todos?.todo);
   console.log(selector);
 
   const addtodoInRedux = (event)  => {
@@ -56,7 +55,7 @@ function App() {
 
 
 <ul>
-  {selector.length > 0 ? selector.map((item , index) => {
+  {selector && selector.length > 0 ? selector.map((item , index) => {
   return <li key={item.id}>{item.title}
   <button onClick={() => deletetodoitemInRedux(index)}>Delete</button></li>
   }): <h2> No Item found</h2>}
