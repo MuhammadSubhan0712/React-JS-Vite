@@ -10,7 +10,7 @@ function App() {
 
   const dispatch  = useDispatch();
 
-  const selector = useSelector(state => state.todos?.todo);
+  const selector = useSelector(state => state.todos.todo);
   console.log(selector);
 
   const addtodoInRedux = (event)  => {
@@ -39,28 +39,68 @@ function App() {
   return (
     <>
      <Navbar/>
-    
-    <h2>
-      Todo
-    </h2>
-  <input
-  className="input is-link"
-  type="text"
-  placeholder="Link input"
-  ref={todoVal}
-/>
-<button onClick={addtodoInRedux}>
-  Add todo
-</button>
+     <section className="section">
+        <div className="container">
+          <h2 className="title is-2 has-text-centered">Todo</h2>
 
+          <form onSubmit={addtodoInRedux}>
+            <div className="field">
+              <label className="label">Add a Todo</label>
+              <div className="control has-icons-left">
+                <input
+                  className="input is-link"
+                  type="text"
+                  placeholder="Enter todo"
+                  ref={todoVal}
+                />
+                <span className="icon is-left">
+                  
+                  {/* Font awesome */}
+                  <i className="fas fa-pencil-alt"></i>
+                </span>
+              </div>
+            </div>
 
-<ul>
-  {selector && selector.length > 0 ? selector.map((item , index) => {
-  return <li key={item.id}>{item.title}
-  <button onClick={() => deletetodoitemInRedux(index)}>Delete</button></li>
-  }): <h2> No Item found</h2>}
-</ul>
+            <div className="field">
+              <div className="control">
+                <button className="button is-primary is-fullwidth">Add Todo</button>
+              </div>
+            </div>
+          </form>
 
+          <div className="box mt-4">
+            {selector && selector.length > 0 ? (
+              selector.map((todo, index) => (
+                <div key={index} className="level is-mobile mb-3">
+                  <div className="level-left">
+                    <div className="level-item">
+                      <p>{todo.title}</p>
+                    </div>
+                  </div>
+                  <div className="level-right">
+                    <div className="level-item">
+                      <button className="button is-warning is-small mr-2">
+                        <span className="icon is-small">
+                          <i className="fas fa-edit"></i>
+                        </span>
+                        <span>Edit</span>
+                      </button>
+                      <button className="button is-danger is-small">
+                        <span className="icon is-small">
+                          <i className="fas fa-trash"></i>
+                        </span>
+                        <span>Delete</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              ))
+            ) : (
+              <p>No todos added yet.</p>
+            )}
+          </div>
+        </div>
+      </section>
 
     </>
   )
