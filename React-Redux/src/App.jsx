@@ -15,10 +15,15 @@ function App() {
 
   const addtodoInRedux = (event)  => {
     event.preventDefault()
+    if (!todoVal.current.value) {
+     alert("Please Enter a Item in todo")
+    }
+    else{
     console.log("Todo added" , todoVal.current.value);
     dispatch(addtodo({
       title: todoVal.current.value
     }))
+  }
     todoVal.current.value = ""
   }
       // To Update the item in todo
@@ -34,10 +39,6 @@ function App() {
          console.log("Item has deleted at index # :" , index);
          dispatch(removetodo({index}))
   }
-
-  // React-Redux : Todo App / BulmaCss
-
-
 
   return (
     <>
