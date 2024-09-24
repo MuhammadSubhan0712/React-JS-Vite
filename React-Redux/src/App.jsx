@@ -46,11 +46,11 @@ function App() {
      <Navbar/>
      <section className="section">
         <div className="container">
-          <h2 className="title is-2 has-text-centered">Todo</h2>
+          <h2 className="title is-1 has-text-centered">Todo</h2>
 
           <form onSubmit={addtodoInRedux}>
             <div className="field">
-              <label className="label">Add a Todo</label>
+              <label className="label is-size-5">Add a Todo</label>
               <div className="control has-icons-left">
                 <input
                   className="input is-link"
@@ -68,12 +68,12 @@ function App() {
 
             <div className="field">
               <div className="control">
-                <button onClick={addtodoInRedux} className="button is-primary is-fullwidth">Add Todo</button>
+                <button onClick={addtodoInRedux} className="is-size-5 button is-primary is-fullwidth">Add Todo</button>
               </div>
             </div>
           </form>
 
-          <div className="m-3 ">
+          <div className="m-3 box is-size-5 p-2 has-text-centered has-background-info-dark has-text-white">
             {selector.length > 0 ? (
               selector.map((item, index) => (
                 <div key={item.id} className="level is-mobile mb-3">
@@ -84,13 +84,13 @@ function App() {
                   </div>
                   <div className="level-right">
                     <div className="level-item">
-                      <button onClick={() => updatetodoInRedux(index)} className="button is-warning is-small mr-2">
+                      <button onClick={() => updatetodoInRedux(index)} className="is-size-6 button is-warning is-small mr-2">
                         <span className="icon is-small">
                           <i className="fas fa-edit"></i>
                         </span>
                         <span>Edit</span>
                       </button>
-                      <button onClick={() => deletetodoitemInRedux(index)} className="button is-danger is-small">
+                      <button onClick={() => deletetodoitemInRedux(index)} className="is-size-6 button is-danger is-small">
                         <span className="icon is-small">
                           <i className="fas fa-trash"></i>
                         </span>
@@ -101,7 +101,7 @@ function App() {
                 </div>
               ))
             ) : (
-              <p className='p-2 has-text-centered has-text-dark'>!!No todos added yet!!</p>
+              <p className=''>!!No todos added yet!!</p>
             )}
           </div>
         </div>
