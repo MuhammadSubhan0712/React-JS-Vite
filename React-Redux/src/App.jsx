@@ -19,6 +19,7 @@ function App() {
     dispatch(addtodo({
       title: todoVal.current.value
     }))
+    todoVal.current.value = ""
   }
 
   const deletetodoitemInRedux = (index) => {
@@ -54,7 +55,7 @@ function App() {
                   ref={todoVal}
                 />
                 <span className="icon is-left">
-                  
+
                   {/* Font awesome */}
                   <i className="fas fa-pencil-alt"></i>
                 </span>
@@ -63,18 +64,18 @@ function App() {
 
             <div className="field">
               <div className="control">
-                <button className="button is-primary is-fullwidth">Add Todo</button>
+                <button onClick={addtodoInRedux} className="button is-primary is-fullwidth">Add Todo</button>
               </div>
             </div>
           </form>
 
           <div className="box mt-4">
-            {selector && selector.length > 0 ? (
-              selector.map((todo, index) => (
-                <div key={index} className="level is-mobile mb-3">
+            {selector.length > 0 ? (
+              selector.map((item, index) => (
+                <div key={item.id} className="level is-mobile mb-3">
                   <div className="level-left">
                     <div className="level-item">
-                      <p>{todo.title}</p>
+                      <p>{item.title}</p>
                     </div>
                   </div>
                   <div className="level-right">
@@ -85,7 +86,7 @@ function App() {
                         </span>
                         <span>Edit</span>
                       </button>
-                      <button className="button is-danger is-small">
+                      <button onClick={() => deletetodoitemInRedux(index)} className="button is-danger is-small">
                         <span className="icon is-small">
                           <i className="fas fa-trash"></i>
                         </span>
@@ -96,7 +97,7 @@ function App() {
                 </div>
               ))
             ) : (
-              <p>No todos added yet.</p>
+              <p className='has-text-centered'>No todos added yet.</p>
             )}
           </div>
         </div>
