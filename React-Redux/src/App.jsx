@@ -23,14 +23,15 @@ function App() {
   }
 
   const deletetodoitemInRedux = (index) => {
-         console.log("Item has deleted at index#:" , index);
+         console.log("Item has deleted at index # :" , index);
          dispatch(removetodo({index}))
   }
 
-  // const updatetodoInRedux = (index) => {
-  //   const updVal = prompt("Enter Upated Value");
+  const updatetodoInRedux = (index) => {
+   export const updVal = prompt("Enter Upated Value");
+   
 
-  // }
+  }
 
   
   

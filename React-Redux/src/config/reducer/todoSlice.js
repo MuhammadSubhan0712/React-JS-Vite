@@ -1,5 +1,5 @@
 import { createSlice, nanoid } from '@reduxjs/toolkit'
-
+import updVal from "./App.jsx"
 
 export const todoSlice = createSlice({
         name: "Todos",
@@ -17,9 +17,9 @@ export const todoSlice = createSlice({
             removetodo: (state , action) => {
                 state.todo.splice(action.payload.index , 1)
             },
-            // updatetodo: (state , action) => {
-                
-            // }
+            updatetodo: (state , action) => {
+                state.todo.splice(action.payload.index , 1 , updVal)
+            }
         }
     })
 
