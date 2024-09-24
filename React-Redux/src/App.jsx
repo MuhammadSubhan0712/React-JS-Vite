@@ -73,7 +73,7 @@ function App() {
             </div>
           </form>
 
-          <div className="">
+          <div className="m-3 ">
             {selector.length > 0 ? (
               selector.map((item, index) => (
                 <div key={item.id} className="level is-mobile mb-3">
@@ -101,7 +101,7 @@ function App() {
                 </div>
               ))
             ) : (
-              <p className='p-2 has-text-centered has-background-dark has-text-white '>!!No todos added yet!!</p>
+              <p className='p-2 has-text-centered has-text-dark'>!!No todos added yet!!</p>
             )}
           </div>
         </div>
