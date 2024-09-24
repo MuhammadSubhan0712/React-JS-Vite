@@ -6,6 +6,7 @@ export const todoSlice = createSlice({
     todo: [],
   },
 
+  
   reducers: {
     addtodo: (state, action) => {
       state.todo.push({
