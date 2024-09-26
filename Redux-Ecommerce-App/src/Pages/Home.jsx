@@ -1,22 +1,19 @@
-import React from 'react'
-import Navbar from '../component/Navbar'
-import Cards from '../component/Cards'
+import React from "react";
+import Cards from "../component/Cards";
+import Carousel from "../component/Carousel";
 
 export const Home = () => {
   return (
-  <>
-  <div>
+    <>
+      <div>
+        <div>
+          <Carousel />
+        </div>
 
-  
- 
-
- <div>
-<Cards/>
- </div>
- </div>
-   </>
-
-    
-
-  )
-}
+        <div>
+          <Cards />
+        </div>
+      </div>
+    </>
+  );
+};
