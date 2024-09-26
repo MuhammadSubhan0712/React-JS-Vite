@@ -10,14 +10,14 @@ function App() {
     <div>
     <Navbar/>
     </div>
-    
+{/*     
     <div>
       <Carousel/>
     </div>
-    
+
     <div>
 <Cards/>
-    </div>
+    </div> */}
 
     </>
   )
