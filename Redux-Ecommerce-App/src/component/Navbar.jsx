@@ -1,10 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 import { ShoppingCart  } from "lucide-react";
 const Navbar = () => {
+  // const cartItems = useSelector((state) => state.counter.value)
   return (
     <>
-      <nav className="bg-white border-gray-200 dark:bg-gray-900">
+      <nav className="bg-base-200 border-gray-200 dark:bg-gray-900">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <a
             href="https://flowbite.com/"
@@ -15,7 +17,7 @@ const Navbar = () => {
               alt="Flowbite Logo"
             />
             <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-              Flowbite
+              Products
             </span>
           </a>
          
@@ -233,12 +235,19 @@ const Navbar = () => {
                 />
               </svg>
             </button>
-            
+              {/* Shopping Cart Icon */}
+              <Link to="/cart" className="relative">
+              <ShoppingCart strokeWidth={2.5} className="w-8 h-8 text-gray-900 dark:text-white" />
+              {/* Badge for item count */}
+              <span className="absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-white bg-blue-800 rounded-full">
+                 {/* {cartItems}   */}
+              </span>
+            </Link>
           </div>
           <div
             className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
             id="navbar-language">
-            <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+            <ul className="flex flex-col bg-black font-medium p-4 md:p-0 mt-4 border border-gray-800 rounded-sm md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
               <li>
                 <Link to="">
                 <a

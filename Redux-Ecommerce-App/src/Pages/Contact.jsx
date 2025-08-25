@@ -2,7 +2,7 @@ import React from 'react';
 
 const Contact = () => {
   return (
-    <div className="flex flex-col items-center p-6 bg-gray-100 min-h-screen">
+    <div className="flex flex-col items-center p-6 bg-gradient-to-r from-blue-200 to bg-blue-300 min-h-screen">
       <h1 className="text-3xl font-bold text-gray-900 mb-6">Contact Us</h1>
       <form className="w-full max-w-md bg-white p-8 rounded-lg shadow-md">
         <div className="mb-4">

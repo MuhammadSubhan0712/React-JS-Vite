@@ -1,8 +1,11 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-
+import { useDispatch , useSelector } from 'react-redux';
+import { increment } from '../Config/reducer/cartSlice';
+import { Loader } from 'lucide-react';
 const Products = () => {
   const [products, setProducts] = useState(null);
+  const dispatch = useDispatch()
 
   useEffect(() => {
     axios('https://api.escuelajs.co/api/v1/products')
@@ -16,7 +19,7 @@ const Products = () => {
   return (
     <>
       {products ? (
-        <div className="bg-red-200 mt-5 grid grid-cols-1 md:grid-cols-3 gap-8 p-7">
+        <div className="bg-gradient-to-r from-blue-200 to bg-blue-300 mt-5 grid grid-cols-1 md:grid-cols-3 gap-8 p-7">
           {products.map((item) => (
             <div
               key={item.id}
@@ -62,19 +65,18 @@ const Products = () => {
                   <span className="text-3xl font-bold text-gray-900 dark:text-white">
                     ${item.price}
                   </span>
-                  <a
-                    href="#"
+                  <button onClick={() => dispatch(increment())}
                     className="text-white bg-blue-500 hover:bg-blue-900 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 transition-transform duration-300 ease-in-out"
                   >
                     Add to cart
-                  </a>
+                  </button>
                 </div>
               </div>
             </div>
           ))}
         </div>
       ) : (
-        <h1 className="text-2xl font-bold text-center text-gray-800">Loading...</h1>
+        <h1 className="text-2xl font-bold text-center text-gray-800"><Loader size={40} strokeWidth={1.5} /></h1>
       )}
     </>
   );

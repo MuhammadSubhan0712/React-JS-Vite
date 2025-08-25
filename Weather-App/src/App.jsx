@@ -38,12 +38,11 @@ Uinput.current.value = ""
     <>
     <h1 className='h1'>Weather App <i className="fas fa-cloud-sun"></i></h1>
 
-
-    <form className='form' onSubmit={status}>
-     
+    <form onSubmit={status}>
+     <div className='form'>
      <input type="text" placeholder='Enter City to check Weather' ref={Uinput} />
      <button><i className="fas fa-search"></i></button>
-
+     </div>
     </form>
 
 

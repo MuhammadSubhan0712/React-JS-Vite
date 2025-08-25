@@ -39,6 +39,7 @@ function App() {
       if (selectedval === Question[QuestionState].correctAnswer) {
         setScore(Score + 10);
       }
+      checkedBtn.checked = false;
     }
     if (QuestionState < Question.length - 1) {
       setQuestionState(QuestionState + 1);
@@ -47,6 +48,13 @@ function App() {
       setResult(true);
     }
   }
+
+  const restartQuiz = () => {
+    setQuestionState(0);
+    setScore(0);
+    setResult(false);
+    checkinput.current = [];
+  };
 
   return (
     <div className="flex flex-col items-center justify-center font-serif min-h-screen bg-gradient-to-r from-blue-700 via-black to-gray-500 text-white p-4">
@@ -59,7 +67,7 @@ function App() {
               <button
                 onClick={() => setStart(true)}
                 className="px-6 py-3 text-xl bg-green-600 text-white rounded-lg shadow-lg hover:bg-green-800 transition duration-300">
-                Let's start the quiz
+                Let&#8217;s start the quiz
               </button>
               <button
                 onClick={() => setExit(true)}
@@ -96,7 +104,7 @@ function App() {
                 <button
                   onClick={nextQuestion}
                   className="mt-6 w-full px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-700 transition duration-300">
-                  Next
+                  {QuestionState < Question.length - 1 ? "Next" : "Finish"}
                 </button>
               </div>
             ) : (
@@ -116,6 +124,20 @@ function App() {
                     You have failed. 😞
                   </p>
                 )}
+
+                <div className="mt-6 space-x-4">
+                  <button
+                    onClick={restartQuiz}
+                    className="px-6 py-3 text-xl bg-green-600 text-white rounded-lg shadow-lg hover:bg-green-800 transition duration-300">
+                    Try Again
+                  </button>
+
+                  <button
+                    onClick={() => setExit(true)}
+                    className="px-6 py-3 text-xl bg-red-600 text-white rounded-lg shadow-lg hover:bg-red-800 transition duration-300">
+                    Exit Quiz
+                  </button>
+                </div>
               </div>
             )
           ) : (
@@ -126,7 +148,7 @@ function App() {
         </>
       ) : (
         <div className="text-4xl text-yellow-200 font-bold">
-          "Program Terminated"
+          Program Terminated
         </div>
       )}
     </div>

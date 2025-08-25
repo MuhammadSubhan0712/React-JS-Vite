@@ -1,6 +1,7 @@
 import axios from "axios";
+import { Link } from "react-router-dom";
 import React, { useEffect, useState } from "react";
-
+import { Loader } from "lucide-react";
 const Cards = () => {
   const [data, setData] = useState(null);
 
@@ -60,19 +61,21 @@ const Cards = () => {
                   <span className="text-3xl font-bold text-gray-900 dark:text-white">
                     ${item.price}
                   </span>
-                  <a
-                    href="#"
+                  <Link to="products">
+                  <button
                     className="text-white bg-blue-500 hover:bg-blue-900 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 transition-transform duration-300 ease-in-out">
-                    Add to cart
-                  </a>
+                    Show more
+                  </button>
+                  </Link>
+                  
                 </div>
               </div>
             </div>
           ))}
         </div>
       ) : (
-        <h1 className="text-2xl font-bold text-center text-gray-800">
-          Loading...
+        <h1 className="text-2xl font-bold flex justify-center text-center text-gray-800">
+        <Loader size={40} strokeWidth={1.5} />
         </h1>
       )}
     </>
